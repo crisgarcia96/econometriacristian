@@ -1,0 +1,62 @@
+RESULTADO BOX-JENKINS: EXPORTACIONES DE CAFÉ SIN TOSTAR DE COLOMBIA
+
+FUENTE: Excel elegido; suma previa de 0901111000, 0901119000 y 0901120000.
+Periodo: 2009-01 a 2026-08; frecuencia mensual; n=212.
+Variable: peso exportado en toneladas netas (no valor FOB ni una tasa porcentual).
+Último mes: 50,107.01 toneladas.
+
+EXPLORACIÓN Y TRANSFORMACIÓN
+Fuerza estacional descriptiva STL: 0.3609.
+FAC de Δln(Y) en rezago 12: 0.1393.
+Banda aproximada al 95 %: ±0.1349.
+ADF de Δln(Y), valor p: 0.000000.
+KPSS de Δln(Y), valor p: 0.100000.
+El logaritmo no garantiza estacionariedad; la diferencia se contrasta por separado.
+
+ESTIMACIÓN
+Modelo seleccionado en entrenamiento: SARIMA(1,1,1)(1,0,0)[12].
+Regla: menor BIC entre candidatos manuales con Ljung-Box p>0,05, si existen.
+No se utilizó auto_arima ni una búsqueda de órdenes automática.
+AIC reestimado: -70.649; BIC reestimado: -57.241.
+
+VALIDACIÓN Y DIAGNÓSTICO
+                  Modelo     RMSE_ton      MAE_ton  MAPE_pct    MASE  RMSE_ingenuo_ton  MAE_ingenuo_ton  Meses_prueba
+SARIMA(1,1,1)(1,0,0)[12] 14418.994321 12093.699783 27.554397 1.32826      16597.856873     13462.455777            10
+              Prueba  Valor_p                      Hipotesis_nula  Rechazar_H0_5pct
+Ljung-Box 12 rezagos 0.294355 No autocorrelación hasta 12 rezagos             False
+Ljung-Box 24 rezagos 0.222894 No autocorrelación hasta 24 rezagos             False
+         Jarque-Bera 0.089092   Residuos normalmente distribuidos             False
+  ARCH-LM 12 rezagos 0.282678   Sin efectos ARCH hasta 12 rezagos             False
+No rechazar una hipótesis nula no demuestra que se cumpla absolutamente.
+
+PRONÓSTICO A DIEZ MESES
+       Mes  Pronostico_puntual_media_ton  Mediana_pronostico_ton  Limite_inferior_80_ton  Limite_superior_80_ton  Limite_inferior_95_ton  Limite_superior_95_ton
+2026-09-01                  54372.779277            53295.031427            41239.692961            68874.430696            36004.685238            78888.632298
+2026-10-01                  55957.147528            54631.485548            41263.489857            72330.266383            35567.074139            83914.667862
+2026-11-01                  56788.392192            55373.860945            41523.579877            73843.933618            35654.839228            85998.550053
+2026-12-01                  55041.189749            53634.817112            40069.516255            71792.571397            34338.300336            83775.072687
+2027-01-01                  57880.399518            56373.476078            41998.419454            75668.771504            35938.301648            88428.463768
+2027-02-01                  53011.999748            51608.847238            38353.780985            69444.864229            32776.621749            81261.367739
+2027-03-01                  53126.102964            51697.811796            38329.434626            69728.754691            32714.965436            81695.447598
+2027-04-01                  48248.607162            46931.650192            34715.588968            63446.418604            29594.322848            74425.753921
+2027-05-01                  54276.038938            52772.411953            38947.236523            71505.136486            33161.713890            83980.202969
+2027-06-01                  53163.846491            51669.382018            38047.229128            70168.711344            32356.728606            82509.114893
+El pronóstico puntual es la media aproximada con corrección lognormal.
+Los intervalos utilizan una aproximación gaussiana en escala logarítmica.
+
+LIMITACIONES
+Estacionalidad y estacionariedad se evalúan como conceptos diferentes.
+Las exportaciones dependen de cosechas, logística y demanda externa no modeladas.
+Si alguna prueba residual rechaza su hipótesis nula, interpretar con cautela.
+
+MATERIALES DEL PÓSTER
+02_serie_original.png; 06_logaritmos_diferenciacion.png; 07_fac_facp_dlog.png
+08_comparacion_modelos_entrenamiento.csv; 12_coeficientes_modelo_final.csv
+13_ecuacion_modelo_final.txt; 14_pruebas_residuales.csv
+15_diagnostico_residuos.png; 16_PRONOSTICO_PUNTUAL_10_MESES.csv
+17_PRONOSTICO_10_MESES.png
+
+REFERENCIAS PARA VERIFICAR
+Archivo original suministrado por el equipo (indicar fuente, extracción y filtros).
+Instrucciones Trabajo 1 - Econometría II, 2026-2S.
+Guía de Acompañamiento y Apoyo - Primer trabajo aplicado.

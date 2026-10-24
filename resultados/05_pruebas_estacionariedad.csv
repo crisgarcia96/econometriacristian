@@ -1,0 +1,4 @@
+﻿Serie,ADF_p,KPSS_p,ADF_rechaza_raiz,KPSS_no_rechaza_estac
+Toneladas originales,0.2845768986150274,0.01,False,False
+Logaritmo de toneladas,0.48728433349324235,0.01,False,False
+Primera diferencia logarítmica,2.6054560180449388e-14,0.1,True,True

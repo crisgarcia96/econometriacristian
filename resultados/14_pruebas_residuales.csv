@@ -1,0 +1,5 @@
+﻿Prueba,Valor_p,Hipotesis_nula,Rechazar_H0_5pct
+Ljung-Box 12 rezagos,0.29435461594294177,No autocorrelación hasta 12 rezagos,False
+Ljung-Box 24 rezagos,0.22289419718770226,No autocorrelación hasta 24 rezagos,False
+Jarque-Bera,0.08909215011099943,Residuos normalmente distribuidos,False
+ARCH-LM 12 rezagos,0.2826781888980205,Sin efectos ARCH hasta 12 rezagos,False
